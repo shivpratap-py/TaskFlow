@@ -1,34 +1,56 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-}
 
-:root{
+/* 1. Default theme: Dark mode */
+:root {
     --background-general: #0B0F19;
-    --sidebar-bg : #111827;
-    --primary-accent : #6366F1;
-    --main-text : #F9FAFB;
-    --secondary-text : #9CA3AF;
-    --border-color : #273244;
+    --sidebar-bg: #111827;
+    --main-text: #F9FAFB;
+    --secondary-text: #9CA3AF;
+    --accent-color: #6366F1;
+    --border-color: #273244;
 }
 
-.app{
-    width: 100vw;
-    height: 100vh;
+/* 2. Light theme colors */
+[data-theme="light"] {
+    --background-general: #F8FAFC;
+    --sidebar-bg: #FFFFFF;
+    --main-text: #111827;
+    --secondary-text: #64748B;
+    --accent-color: #4F46E5;
+    --border-color: #E2E8F0;
+}
+
+/* 3. Apply basic settings to the whole page */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-general);
+    color: var(--main-text);
+}
+
+/* 4. Main app: sidebar + content */
+.app {
     display: flex;
-    flex-direction: row;
+    min-height: 100vh;
     background-color: var(--background-general);
 }
 
-.left{
-    display: flex;
+/* 5. Sidebar */
+.left {
     width: 240px;
+    flex-shrink: 0;
     padding: 24px;
     background-color: var(--sidebar-bg);
-    border: 1px solid var(--border-color);
-    flex-shrink: 0;
+    border-right: 1px solid var(--border-color);
 }
 
-.right{
-    display: flex;
+/* 6. Main dashboard content */
+.right {
+    flex: 1;
+    min-width: 0;
+    padding: 32px;
+    background-color: var(--background-general);
 }
