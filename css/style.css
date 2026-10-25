@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root{
+    --background-general: #0B0F19;
+    --sidebar-bg : #111827;
+    --primary-accent : #6366F1;
+    --main-text : #F9FAFB;
+    --secondary-text : #9CA3AF;
+    --border-color : #273244;
+}
+
+.app{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--background-general);
+}
+
+.left{
+    display: flex;
+    width: 240px;
+    padding: 24px;
+    background-color: var(--sidebar-bg);
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.right{
+    display: flex;
+}
