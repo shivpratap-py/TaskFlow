@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,22 +11,49 @@
     <div class="app">
         <aside class="left">
             <div class="brand">
-                <div class="icon"><!-- SVG HERE --></div>
+                <div class="icon">
+                    <!-- SVG HERE -->
+                </div>
                 <div class="logo">TaskFlow</div>
-                <div class="subtitle">Project Management</div>
+                <div class="subtitle">Your college workspace</div>
             </div>
+
             <nav>
                 <ul class="nav-links">
-                    <span>WORKSPACE</span>
-                    <li class="nav-link"><a href="">Dashboard</a></li>
-                    <li class="nav-link"><a href="">Assignments</a></li>
-                    <li class="nav-link"><a href="">Calendar</a></li>
-                    <li class="nav-link"><a href="">Settings</a></li>
-                    <li class="nav-link"><a href="">Theme Toggle</a></li>
+                    <li class="nav-heading">WORKSPACE</li>
+
+                    <li class="nav-link">
+                        <a href="#" aria-current="page">Dashboard</a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Assignments</a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Calendar</a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Settings</a>
+                    </li>
                 </ul>
             </nav>
+
+            <button
+                class="theme-toggle"
+                type="button"
+                aria-label="Toggle light and dark theme"
+            >
+                Toggle Theme
+            </button>
         </aside>
-        <div class="right"></div>
+
+        <main class="right">
+            <!-- Dashboard content will go here -->
+        </main>
     </div>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
