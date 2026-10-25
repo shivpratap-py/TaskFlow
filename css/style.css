@@ -1,5 +1,8 @@
 
-/* 1. Default theme: Dark mode */
+/* ========================================
+   1. THEME VARIABLES
+======================================== */
+
 :root {
     --background-general: #0B0F19;
     --sidebar-bg: #111827;
@@ -7,9 +10,9 @@
     --secondary-text: #9CA3AF;
     --accent-color: #6366F1;
     --border-color: #273244;
+    --hover-bg: #1F2937;
 }
 
-/* 2. Light theme colors */
 [data-theme="light"] {
     --background-general: #F8FAFC;
     --sidebar-bg: #FFFFFF;
@@ -17,9 +20,13 @@
     --secondary-text: #64748B;
     --accent-color: #4F46E5;
     --border-color: #E2E8F0;
+    --hover-bg: #F1F5F9;
 }
 
-/* 3. Apply basic settings to the whole page */
+/* ========================================
+   2. GLOBAL STYLES
+======================================== */
+
 * {
     box-sizing: border-box;
 }
@@ -31,26 +38,208 @@ body {
     color: var(--main-text);
 }
 
-/* 4. Main app: sidebar + content */
+/* ========================================
+   3. MAIN APPLICATION LAYOUT
+======================================== */
+
 .app {
     display: flex;
     min-height: 100vh;
     background-color: var(--background-general);
 }
 
-/* 5. Sidebar */
+/* ========================================
+   4. SIDEBAR
+======================================== */
+
 .left {
     width: 240px;
     flex-shrink: 0;
     padding: 24px;
     background-color: var(--sidebar-bg);
     border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
 }
 
-/* 6. Main dashboard content */
+/* ========================================
+   5. BRAND / LOGO
+======================================== */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+}
+
+.icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--main-text);
+}
+
+.subtitle {
+    font-size: 12px;
+    color: var(--secondary-text);
+}
+
+/* ========================================
+   6. NAVIGATION
+======================================== */
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-heading {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--secondary-text);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.nav-link {
+    margin-bottom: 6px;
+}
+
+.nav-link a {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--secondary-text);
+    font-size: 14px;
+    font-weight: 500;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.nav-link a:hover {
+    background-color: var(--hover-bg);
+    color: var(--main-text);
+}
+
+.nav-link a[aria-current="page"] {
+    background-color: var(--accent-color);
+    color: #FFFFFF;
+}
+
+/* ========================================
+   7. THEME TOGGLE BUTTON
+======================================== */
+
+.theme-toggle {
+    width: 100%;
+    margin-top: auto;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--main-text);
+    cursor: pointer;
+    font-size: 14px;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Visible keyboard focus */
+.theme-toggle:focus-visible,
+.nav-link a:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+/* ========================================
+   8. MAIN DASHBOARD CONTENT
+======================================== */
+
 .right {
     flex: 1;
     min-width: 0;
     padding: 32px;
     background-color: var(--background-general);
+}
+
+/* ========================================
+   9. RESPONSIVE SIDEBAR
+======================================== */
+
+@media (max-width: 768px) {
+    .left {
+        width: 200px;
+        padding: 16px;
+    }
+
+    .right {
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .brand {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .left {
+        width: 72px;
+        padding: 16px 8px;
+    }
+
+    .brand {
+        justify-content: center;
+    }
+
+    .brand-text,
+    .nav-heading {
+        display: none;
+    }
+
+    .nav-link a {
+        padding: 12px 4px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .theme-toggle {
+        padding: 10px 4px;
+        font-size: 11px;
+    }
+
+    .right {
+        padding: 16px;
+    }
 }
