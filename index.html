@@ -1,25 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskFlow | Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div class="app">
         <aside class="left">
             <div class="brand">
-    <div class="icon">
-        <img src="assets/img/logo.svg" alt="TaskFlow logo">
-    </div>
+                <div class="icon">
+                    <img src="assets/img/logo.svg" alt="TaskFlow logo">
+                </div>
 
-    <div class="brand-text">
-        <div class="logo">TaskFlow</div>
-        <div class="subtitle">Your college workspace</div>
-    </div>
-</div>
+                <div class="brand-text">
+                    <div class="logo">TaskFlow</div>
+                    <div class="subtitle">Your college workspace</div>
+                </div>
+            </div>
 
             <nav>
                 <ul class="nav-links">
@@ -43,20 +44,118 @@
                 </ul>
             </nav>
 
-            <button
-                class="theme-toggle"
-                type="button"
-                aria-label="Toggle light and dark theme"
-            >
+            <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme">
                 Toggle Theme
             </button>
         </aside>
 
         <main class="right">
             <!-- Dashboard content will go here -->
+
+            <section class="dashboard-header">
+                <div class="welcome">
+                    <h1>Good evening!</h1>
+                    <p>Here's what's happening with your assignments.</p>
+                </div>
+
+                <button class="add-assignment" type="button">
+                    + Add Assignment
+                </button>
+            </section>
+
+            <div class="dashboard-meta">
+                <p class="current-date">Monday, October 26</p>
+                <span class="semester-badge">Semester 1</span>
+            </div>
+
+            <section class="summary-cards">
+                <article class="summary-card pending-card">
+                    <div class="card-top">
+                        <span class="card-label">Pending</span>
+                        <span class="card-icon">◷</span>
+                    </div>
+                    <h2>08</h2>
+                    <p>Assignments to complete</p>
+                </article>
+
+                <article class="summary-card overdue-card">
+                    <div class="card-top">
+                        <span class="card-label">Overdue</span>
+                        <span class="card-icon">!</span>
+                    </div>
+                    <h2>03</h2>
+                    <p>Past their deadline</p>
+                </article>
+
+                <article class="summary-card submitted-card">
+                    <div class="card-top">
+                        <span class="card-label">Submitted</span>
+                        <span class="card-icon">✓</span>
+                    </div>
+                    <h2>12</h2>
+                    <p>Assignments completed</p>
+                </article>
+            </section>
+
+            <section class="upcoming-section">
+                <div class="section-header">
+                    <div>
+                        <h2>Upcoming Assignments</h2>
+                        <p>Keep track of what needs your attention.</p>
+                    </div>
+
+                    <a href="#" class="view-all">View all &rarr;</a>
+                </div>
+
+                <div class="assignment-list">
+                    <article class="assignment-item">
+                        <div class="assignment-icon">M</div>
+
+                        <div class="assignment-info">
+                            <h3>Mathematics-I Assignment</h3>
+                            <p>Mathematics-I &middot; Tutorial</p>
+                            <span>Due Oct 28</span>
+                        </div>
+
+                        <span class="assignment-status pending">
+                            Pending
+                        </span>
+                    </article>
+
+                    <article class="assignment-item">
+                        <div class="assignment-icon">C</div>
+
+                        <div class="assignment-info">
+                            <h3>Programming Lab</h3>
+                            <p>C Programming &middot; Practical</p>
+                            <span>Due Oct 29</span>
+                        </div>
+
+                        <span class="assignment-status in-progress">
+                            In Progress
+                        </span>
+                    </article>
+
+                    <article class="assignment-item">
+                        <div class="assignment-icon">D</div>
+
+                        <div class="assignment-info">
+                            <h3>Digital Systems Report</h3>
+                            <p>Digital Systems &middot; Report</p>
+                            <span>Due Oct 31</span>
+                        </div>
+
+                        <span class="assignment-status not-started">
+                            Not Started
+                        </span>
+                    </article>
+                </div>
+            </section>
+
         </main>
     </div>
 
     <script src="js/app.js"></script>
 </body>
+
 </html>
