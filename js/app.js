@@ -7,8 +7,9 @@ const html = document.documentElement;
 // Read a saved value 
 let savedTheme = localStorage.getItem("theme");
 console.log(savedTheme)
-
-html.setAttribute("data-theme", savedTheme)
+if (savedTheme) {
+    html.setAttribute("data-theme", savedTheme);
+}
 
 // Event listner
 themeToggle.addEventListener("click", () => {
