@@ -1,161 +1,373 @@
+
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskFlow | Dashboard</title>
-    <link rel="stylesheet" href="/css/style.css">
+
+    <title>AttendX | Attendance Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="app">
-        <aside class="left">
-            <div class="brand">
-                <div class="icon">
-                    <img src="assets/img/logo.svg" alt="TaskFlow logo">
-                </div>
 
-                <div class="brand-text">
-                    <div class="logo">TaskFlow</div>
-                    <div class="subtitle">Your college workspace</div>
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">
+    &times;
+</button>
+            <div class="brand">
+                <img src="assets/img/logo.svg" alt="AttendX Logo">
+
+                <div>
+                    <h2>AttendX</h2>
+                    <p>Attendance Tracker</p>
                 </div>
             </div>
 
-            <nav>
-                <ul class="nav-links">
-                    <li class="nav-heading">WORKSPACE</li>
+            <nav class="navigation">
 
-                    <li class="nav-link">
-                        <a href="#" aria-current="page">Dashboard</a>
-                    </li>
+                <p class="nav-heading">MENU</p>
 
-                    <li class="nav-link">
-                        <a href="#">Assignments</a>
-                    </li>
+                <a href="#" class="nav-link active">
+                    <span>◈</span>
+                    Dashboard
+                </a>
 
-                    <li class="nav-link">
-                        <a href="#">Calendar</a>
-                    </li>
+                <a href="#" class="nav-link">
+                    <span>▤</span>
+                    My Subjects
+                </a>
 
-                    <li class="nav-link">
-                        <a href="#">Settings</a>
-                    </li>
-                </ul>
+                <a href="#" class="nav-link">
+                    <span>▦</span>
+                    Attendance
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span>▥</span>
+                    Timetable
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span>▧</span>
+                    Analytics
+                </a>
+
+                <p class="nav-heading">PREFERENCES</p>
+
+                <a href="#" class="nav-link">
+                    <span>⚙</span>
+                    Settings
+                </a>
+
             </nav>
 
-            <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme">
-                Toggle Theme
-            </button>
-        </aside>
-
-        <main class="right">
-            <!-- Dashboard content will go here -->
-
-            <section class="dashboard-header">
-                <div class="welcome">
-                    <h1>Good evening!</h1>
-                    <p>Here's what's happening with your assignments.</p>
-                </div>
-
-                <button class="add-assignment" type="button">
-                    + Add Assignment
-                </button>
-            </section>
-
-            <div class="dashboard-meta">
-                <p class="current-date">Monday, October 26</p>
-                <span class="semester-badge">Semester 1</span>
+            <div class="sidebar-footer">
+                <p>AttendX v1.0</p>
             </div>
 
-            <section class="summary-cards">
-                <article class="summary-card pending-card">
-                    <div class="card-top">
-                        <span class="card-label">Pending</span>
-                        <span class="card-icon">◷</span>
-                    </div>
-                    <h2>08</h2>
-                    <p>Assignments to complete</p>
-                </article>
+        </aside>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-                <article class="summary-card overdue-card">
-                    <div class="card-top">
-                        <span class="card-label">Overdue</span>
-                        <span class="card-icon">!</span>
-                    </div>
-                    <h2>03</h2>
-                    <p>Past their deadline</p>
-                </article>
 
-                <article class="summary-card submitted-card">
-                    <div class="card-top">
-                        <span class="card-label">Submitted</span>
-                        <span class="card-icon">✓</span>
-                    </div>
-                    <h2>12</h2>
-                    <p>Assignments completed</p>
-                </article>
-            </section>
+        <!-- Main Content -->
+        <main class="main">
 
-            <section class="upcoming-section">
-                <div class="section-header">
+            <!-- Topbar -->
+            <header class="topbar">
+
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Track your academic attendance.</p>
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button class="theme-toggle">
+                        ☼
+                    </button>
+<button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+                    <div class="profile">
+                        <span>SM</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- Dashboard Content -->
+            <section class="dashboard-content">
+
+                <!-- Welcome Section -->
+                <div class="welcome-section">
+
                     <div>
-                        <h2>Upcoming Assignments</h2>
-                        <p>Keep track of what needs your attention.</p>
+                        <h2>Welcome back!</h2>
+                        <p>Here's your attendance overview.</p>
                     </div>
 
-                    <a href="#" class="view-all">View all &rarr;</a>
+                    <button class="primary-btn">
+                        + Add Subject
+                    </button>
+
                 </div>
 
-                <div class="assignment-list">
-                    <article class="assignment-item">
-                        <div class="assignment-icon">M</div>
 
-                        <div class="assignment-info">
-                            <h3>Mathematics-I Assignment</h3>
-                            <p>Mathematics-I &middot; Tutorial</p>
-                            <span>Due Oct 28</span>
+                <!-- Attendance Overview -->
+                <section class="overview-section">
+
+                    <div class="section-header">
+                        <div>
+                            <h2>Attendance Overview</h2>
+                            <p>Your academic attendance summary.</p>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+
+                        <article class="stat-card">
+                            <p>Total Subjects</p>
+                            <h2>10</h2>
+                            <span class="stat-description">
+                                Theory, practical and tutorials
+                            </span>
+                        </article>
+
+                        <article class="stat-card">
+                            <p>Theory Subjects</p>
+                            <h2>5</h2>
+                            <span class="stat-description">
+                                Minimum target 75%
+                            </span>
+                        </article>
+
+                        <article class="stat-card">
+                            <p>Practical Subjects</p>
+                            <h2>3</h2>
+                            <span class="stat-description">
+                                Minimum target 100%
+                            </span>
+                        </article>
+
+                        <article class="stat-card">
+                            <p>Tutorial Subjects</p>
+                            <h2>2</h2>
+                            <span class="stat-description">
+                                Minimum target 100%
+                            </span>
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Subject Attendance -->
+                <section class="subjects-section">
+
+                    <div class="section-header">
+
+                        <div>
+                            <h2>My Subjects</h2>
+                            <p>Attendance is calculated separately for each subject.</p>
                         </div>
 
-                        <span class="assignment-status pending">
-                            Pending
-                        </span>
-                    </article>
+                        <a href="#">View all</a>
 
-                    <article class="assignment-item">
-                        <div class="assignment-icon">C</div>
+                    </div>
 
-                        <div class="assignment-info">
-                            <h3>Programming Lab</h3>
-                            <p>C Programming &middot; Practical</p>
-                            <span>Due Oct 29</span>
+
+                    <div class="subject-list">
+
+                        <!-- Theory Subjects -->
+                        <section class="subject-category">
+
+                            <h3>Theory Subjects</h3>
+
+                            <div class="subject-grid">
+
+                                <article class="subject-card">
+                                    <div class="subject-info">
+                                        <div class="subject-icon">I</div>
+                                        <div>
+                                            <h3>IPL</h3>
+                                            <p>Theory · Target 75%</p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="subject-card">
+                                    <div class="subject-info">
+                                        <div class="subject-icon">D</div>
+                                        <div>
+                                            <h3>DSM</h3>
+                                            <p>Theory · Target 75%</p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="subject-card">
+                                    <div class="subject-info">
+                                        <div class="subject-icon">P</div>
+                                        <div>
+                                            <h3>PC</h3>
+                                            <p>Theory · Target 75%</p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="subject-card">
+                                    <div class="subject-info">
+                                        <div class="subject-icon">E</div>
+                                        <div>
+                                            <h3>EC</h3>
+                                            <p>Theory · Target 75%</p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="subject-card">
+                                    <div class="subject-info">
+                                        <div class="subject-icon">H</div>
+                                        <div>
+                                            <h3>HSSM</h3>
+                                            <p>Theory · Target 75%</p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- Practical Subjects -->
+                        <section class="subject-category">
+
+                            <h3>Practical Subjects</h3>
+
+                            <div class="subject-grid">
+
+                                <article class="subject-card">
+                                    <div class="subject-info">
+                                        <div class="subject-icon">I</div>
+                                        <div>
+                                            <h3>IPL Lab</h3>
+                                            <p>Practical · Target 100%</p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="subject-card">
+                                    <div class="subject-info">
+                                        <div class="subject-icon">C</div>
+                                        <div>
+                                            <h3>CAED Lab</h3>
+                                            <p>Practical · Target 100%</p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="subject-card">
+                                    <div class="subject-info">
+                                        <div class="subject-icon">D</div>
+                                        <div>
+                                            <h3>DSM Lab</h3>
+                                            <p>Practical · Target 100%</p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- Tutorial Subjects -->
+                        <section class="subject-category">
+
+                            <h3>Tutorial Subjects</h3>
+
+                            <div class="subject-grid">
+
+                                <article class="subject-card">
+                                    <div class="subject-info">
+                                        <div class="subject-icon">P</div>
+                                        <div>
+                                            <h3>PC Tutorial</h3>
+                                            <p>Tutorial · Target 100%</p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="subject-card">
+                                    <div class="subject-info">
+                                        <div class="subject-icon">E</div>
+                                        <div>
+                                            <h3>EC Tutorial</h3>
+                                            <p>Tutorial · Target 100%</p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Quick Actions -->
+                <section class="quick-actions">
+
+                    <div class="section-header">
+
+                        <div>
+                            <h2>Quick Actions</h2>
+                            <p>Manage your attendance.</p>
                         </div>
 
-                        <span class="assignment-status in-progress">
-                            In Progress
-                        </span>
-                    </article>
+                    </div>
 
-                    <article class="assignment-item">
-                        <div class="assignment-icon">D</div>
+                    <div class="action-grid">
 
-                        <div class="assignment-info">
-                            <h3>Digital Systems Report</h3>
-                            <p>Digital Systems &middot; Report</p>
-                            <span>Due Oct 31</span>
-                        </div>
+                        <button class="action-card">
+                            <span>+</span>
+                            <h3>Mark Attendance</h3>
+                            <p>Record today's attendance.</p>
+                        </button>
 
-                        <span class="assignment-status not-started">
-                            Not Started
-                        </span>
-                    </article>
-                </div>
+                        <button class="action-card">
+                            <span>▤</span>
+                            <h3>View Timetable</h3>
+                            <p>Check your weekly schedule.</p>
+                        </button>
+
+                    </div>
+
+                </section>
+
             </section>
 
         </main>
+
     </div>
 
     <script src="js/app.js"></script>
-</body>
 
+</body>
 </html>

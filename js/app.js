@@ -24,68 +24,19 @@ themeToggle.addEventListener("click", () => {
     }
 })
 
-// ======================== Assignement ========================
-const assignmentList = document.querySelector(".assignment-list")
+// ======================== HAMBURGER ========================
+const menuToggle = document.getElementById("menuToggle")
+const sidebar = document.getElementById("sidebar")
+const sidebarOverlay = document.getElementById("sidebarOverlay")
+const sidebarClose = document.getElementById("sidebarClose")
 
-const Assignement = {
-    symbol : "DSM",
-    title : "Adder",
-    subject : "Digital System and Microprocessor",
-    deadline : "2026-11-02",
-    status : "pending"
-}
-const Assignement2 = {
-    symbol : "CAED",
-    title : "LAB ASSESMENT",
-    subject : "Computer Aided Engineering Drawing",
-    deadline : "2026-11-02",
-    status : "pending"
-}
+menuToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("active")
+    sidebarOverlay.classList.toggle("active")
+    sidebarClose.classList.toggle("active")
+})
 
-const assignments = [
-    Assignement,
-    Assignement2
-];
-
-assignments.forEach(e => {
-    const newElement = document.createElement("article");
-    newElement.classList.add("assignment-item");
-
-    const icon = document.createElement("div");
-    icon.classList.add("assignment-icon");
-    icon.textContent = e.symbol;
-
-    // making div to store info 
-    const info = document.createElement("div");
-    info.classList.add("assignment-info");
-    
-    // making title 
-    const assignmentTitle = document.createElement("h3")
-    assignmentTitle.textContent = e.title
-    console.log(assignmentTitle)
-
-    // making subject 
-    const assignmentSubject = document.createElement("p")
-    assignmentSubject.textContent = e.subject
-
-    // making date and due 
-    const assignmentDue = document.createElement("span")
-    assignmentDue.textContent = e.deadline
-
-
-    // Making status 
-    const assignmentStatus = document.createElement("span")
-    assignmentStatus.classList.add("assignment-status");
-    assignmentStatus.classList.add(e.status);
-    assignmentStatus.textContent = e.status
-    console.log(assignmentSubject)
-
-    newElement.appendChild(icon);
-    info.appendChild(assignmentTitle);
-    info.appendChild(assignmentSubject);
-    info.appendChild(assignmentDue);
-    newElement.appendChild(info);
-    
-    assignmentList.appendChild(newElement);
-    newElement.appendChild(assignmentStatus);
+sidebarClose.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+    sidebarOverlay.classList.remove("active");
 });
